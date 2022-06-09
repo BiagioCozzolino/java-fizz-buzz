@@ -21,19 +21,30 @@ public class fizzBuzz {
 		// Ciclo While per verificare che il numero inserito sia corretto
 
 		while (continuaAChiedere) {
-			System.out.print("Dimmi da 1 a 100 fino a che numero vuoi giocare a FizzBuzz");
+			System.out.print("Dimmi da 2 a 199 fino a che numero vuoi giocare a FizzBuzz");
 			numero = scan.nextInt();
-			if (numero > 0 && numero <= 100) {
+			if (numero > 1 && numero < 200) {
 				continuaAChiedere = false;
 
 			} else {
-				System.out.println("Hai inserito un numero errato");
+				System.out.println("Hai inserito un numero errato, riprova");
 
 			}
 
-			// Inizio ciclo for per conteggio numeri per FizzBuzz
-			for (int i = 1; i <= numero; i++) {
+		}
+		// Inizio ciclo for per conteggio numeri per FizzBuzz
+		for (int i = 1; i <= numero; i++) {
+			if ((i % 5) == 0 && (i % 3) == 0) {
+				System.out.println("FizzBuzz");
+			} else if ((i % 3) == 0) {
+				System.out.println("Fizz");
+
+			} else if ((i % 5) == 0) {
+				System.out.println("Buzz");
+
+			} else {
 				System.out.println(i);
+
 			}
 			scan.close();
 
